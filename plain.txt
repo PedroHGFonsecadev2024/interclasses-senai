@@ -1,0 +1,53 @@
+ <div class="imagens-header">
+            <div>
+        <svg class="moldura-svg" viewBox="0 0 660 323" xmlns="http://www.w3.org/2000/svg" height="440px">
+        
+        <!-- Moldura em formato de seta -->
+        <path d="M0 0H454.951L660 157.655L454.951 323H0L248.621 157.655L0 0Z" fill="#D9D9D9"/>
+
+        <!-- Máscara para recortar a imagem no formato da seta -->
+        <clipPath id="mascaraSeta">
+        <path d="M0 0H454.951L660 157.655L454.951 323H0L248.621 157.655L0 0Z"/>
+        </clipPath>
+
+        <!-- Imagem dentro da moldura (recortada) -->
+        <foreignObject width="100%" height="100%" clip-path="url(#mascaraSeta)">
+        <img src="src/falcao-futsal.png" alt="Imagem dentro da seta" class="imagem-dentro" />
+        </foreignObject>
+        </svg>
+    </div>
+    <div>
+        <svg class="moldura-svg" viewBox="0 0 660 323" xmlns="http://www.w3.org/2000/svg" height="440px">
+        
+        <!-- Moldura em formato de seta -->
+        <path d="M0 0H454.951L660 157.655L454.951 323H0L248.621 157.655L0 0Z" fill="#D9D9D9"/>
+
+        <!-- Máscara para recortar a imagem no formato da seta -->
+        <clipPath id="mascaraSeta">
+        <path d="M0 0H454.951L660 157.655L454.951 323H0L248.621 157.655L0 0Z"/>
+        </clipPath>
+
+        <!-- Imagem dentro da moldura (recortada) -->
+        <foreignObject width="100%" height="100%" clip-path="url(#mascaraSeta)">
+        <img src="src/volei.png" alt="Imagem dentro da seta" class="imagem-dentro"/>
+        </foreignObject>
+        </svg>
+    </div>
+    <div>
+        <svg class="moldura-svg" viewBox="0 0 660 323" xmlns="http://www.w3.org/2000/svg" height="440px">
+        
+        <!-- Moldura em formato de seta -->
+        <path d="M0 0H454.951L660 157.655L454.951 323H0L248.621 157.655L0 0Z" fill="#D9D9D9"/>
+
+        <!-- Máscara para recortar a imagem no formato da seta -->
+        <clipPath id="mascaraSeta">
+        <path d="M0 0H454.951L660 157.655L454.951 323H0L248.621 157.655L0 0Z"/>
+        </clipPath>
+
+        <!-- Imagem dentro da moldura (recortada) -->
+        <foreignObject width="100%" height="100%" clip-path="url(#mascaraSeta)">
+        <img src="src/tênis-de-mesa.jpg" style="object-fit:cover; zoom:30%; transform: translate(0, -5%)" alt="Imagem dentro da seta" class="imagem-dentro" />
+        </foreignObject>
+        </svg>
+    </div>
+    </div>
