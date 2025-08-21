@@ -48,6 +48,38 @@
         body{
             background-color: #555555;
         }
+        strong{
+            color: #f00;
+            font-weight: 700;
+        }
+        p{
+            font-family: "Orbitron", sans-serif;
+            color: #fff;
+            margin: 0;
+        }
+        .anuncio{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .form form{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        input, .cabecalho {
+            border: none;
+            width: 50%;
+            height: 70px;
+            outline: none;
+            box-sizing: border-box;
+        }
+        form :nth-child(even){
+            background-color: #d9d9d9;
+        }
+        form :nth-child(odd){
+            background-color: #f00;
+        }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -66,7 +98,25 @@
             <div class="moldura"><img src="src/tênis-de-mesa.jpg" alt=""></div>
         </div>
     </header>
-    <main></main>
+    <main>
+        <div class="anuncio">
+            <p style="font-size: 29px;"> A <strong>AAPM</strong> do SENAI Gapar Ricardo Jr. apresenta</p>
+            <p style="font-size: 64px;">INTERCLASSES <strong>SENAI</strong> 2025</p>
+            <p style="font-size: 64px;">De <strong>DD/MM</strong> A <strong>DD/MM</strong></p>
+            <p style="font-size: 29px;">Venha testar suas habilidades, competir e se divertir em três modalidades: futsal, vôlei e tênis de mesa</p>
+        </div>
+        <div class="form">
+            <center> <div class="cabecalho" style="background-color: #d9d9d9; margin-top: 10px;"> <p style="color: black;">Inscreva-se e faça parte desta história!</p></div></center>
+            <form action="">
+            <input type="text">
+            <input type="text">
+            <input type="text">
+            <input type="text">
+            <input type="text">
+            <input type="text">
+            </form>
+        </div>
+    </main>
     <footer>
 
     </footer>
