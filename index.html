@@ -108,7 +108,7 @@
             height: inherit;
         }
         .navbar{
-            display: grid;
+            display: flex;
             position: relative;
             background-color: #282828;
             margin: 0;
@@ -135,12 +135,13 @@
             flex-direction: column;
             align-items: center;
         }
-        input, .cabecalho, .botoesforms{
+        input, .cabecalho, .botoesforms, select{
             border: none;
             width: 50%;
             height: 70px;
             outline: none;
             box-sizing: border-box;
+            font-family: "Orbitron", sans-serif;
         }
         .botoesforms{
             display: flex;
@@ -158,26 +159,73 @@
         }
         form :nth-child(even){
             background-color: #d9d9d9;
+            color: black;
         }
         form :nth-child(odd){
             background-color: #f00;
+            color: #fff;
         }
         .carrossel{
             display: flex;
             align-items: center;
             justify-content: center;
             width: 100%;
-            min-height: 100vh;
+            min-height: 50vh;
             gap: 1rem;
         }
-        #produtos-grid{
+
+        .slide.on{
+            opacity: 1;
+        }
+
+        #produtosgrid{
             position: relative;
             display: flex;
             align-items: center;
             justify-content: center;
-            width: 50vw;
-            background-color: firebrick;
+            width: 700px;
+        }
+        .slide{
+            position: absolute;
+            width: 100%;
+            border-radius: 10px;
+            opacity: 0;
+            transition: opacity .2s;
+        }
+        #botaoesquerdo, #botaodireito{
+            width: 30px;
+            height: 30px;
+            border: none; 
+        }
+        .slide2.on{
+            opacity: 1;
+        }
 
+        #produtosgrid2{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 700px;
+        }
+        .slide2{
+            position: absolute;
+            width: 100%;
+            border-radius: 10px;
+            opacity: 0;
+            transition: opacity .2s;
+        }
+        #botaoesquerdo2, #botaodireito2{
+            width: 30px;
+            height: 30px;
+            border: none; 
+        }
+        .cabecalho{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-size: 29px;
         }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -189,7 +237,7 @@
         <div class="navbar">
             <img src="src/Hamburger_icon.png" style="filter: invert(1); margin-left: 50px;">
             <img src="src/AAPM_logo2.png" style="height: 99px; border-radius: 5%;" alt="">
-            <img src="src/SENAI_São_Paulo_logo.png" style="right: 0;position: absolute; width: 387px; height: 99px; margin-right: 50px; border-radius: 5%;" alt="">
+            <img src="src/SENAI_São_Paulo_logo.png" style="left: 0;position: absolute; width: 387px; height: 99px; margin-right: 50px; border-radius: 5%;" alt="">
         </div>
         <div class="imagens-header">
             <div class="moldura"> <img src="src/falcao-futsal.png" alt="Futsal"></div>
@@ -198,6 +246,38 @@
         </div>
     </header>
     <main>
+            <div class="beneficiosaapm">
+            <center>
+                <h1 style="color: white;">Por que aderir à AAPM?</h1>
+                <h1 style="color: white;">Benefícios para os membros</h1>
+            </center>
+            <div class="carrossel">
+                <button id="botaoesquerdo">&#129120</button>
+                <div id="produtosgrid">
+                    <img src="src/Slides/1.png" alt="" class="slide on">
+                    <img src="src/Slides/2.png" alt="" class="slide">
+                    <img src="src/Slides/3.png" alt="" class="slide">
+                    <img src="src/Slides/4.png" alt="" class="slide">
+                    <img src="src/Slides/5.png" alt="" class="slide">
+                </div>
+                <button id="botaodireito">&#129122</button>
+            </div>
+        </div>
+        <div class="beneficiosaapm">
+            <center>
+                <h1 style="color: white;">Por que aderir à AAPM?</h1>
+                <h1 style="color: white;">Benefícios para a comunidade. Graças a sua contribuição, a escola pode usufruir de:</h1>
+            </center>
+            <div class="carrossel">
+                <button id="botaoesquerdo2">&#129120</button>
+                <div id="produtosgrid2">
+                    <img src="src/Slides/6.png" alt="" class="slide2">
+                    <img src="src/Slides/7.png" alt="" class="slide2">
+                    <img src="src/Slides/8.png" alt="" class="slide2">
+                </div>
+                <button id="botaodireito2">&#129122</button>
+            </div>
+        </div>
         <div class="anuncio">
             <p style="font-size: 29px;"> A <strong>AAPM</strong> do SENAI Gapar Ricardo Jr. apresenta</p>
             <p style="font-size: 64px;">INTERCLASSES <strong>SENAI</strong> 2025</p>
@@ -207,26 +287,31 @@
         <div class="form">
             <center> <div class="cabecalho" style="background-color: #d9d9d9; margin-top: 10px;"> <p style="color: black;">Inscreva-se e faça parte desta história!</p></div></center>
             <form action="">
-            <input type="text">
-            <input type="text">
-            <input type="text">
-            <input type="text">
-            <input type="text">
-            <input type="text">
+            <input type="text" placeholder="Nome Completo">
+            <select name="sala" id="sala">
+                <option value="" disabled selected>Selecione sua sala</option>
+                <!--Salas serão colocadas com Javascript ou JSON-->
+            </select>
+            <input type="tel" placeholder="Telefone"> 
+            <input type="email" placeholder="Email pessoal"> 
+            <select name="equipe" id="equipe">
+                <option value="" disabled selected>Possui equipe?</option> 
+                <option value="Equipe">Sim</option>
+                 <!--Qual?-->
+                <option value="Semequipe">Não</option>
+                <!--Crie-->
+            </select>
+            <select name="AAPM" id="AAPM">
+                <option value="" disabled selected>Membro da AAPM?</option>
+                <option value="Membro">Sim</option>
+                <option value="Naomembro">Não</option>
+            </select>
             </form>
             <center>
             <button style="margin-top: 10px;" class="botoesforms"> Confirmar inscrição </button>
             <button style="margin-top: 30px;" class="botoesforms">  Regulamento </button>
             <button style="margin-top: 10px;" class="botoesforms">  Times e participantes </button>
             </center>
-        </div>
-        <div class="beneficiosaapm">
-            <h1>Por que aderir à AAPM</h1>
-            <div class="carrossel">
-                <button id="botaoesquerdo"></button>
-                <div id="produtosgrid"></div>
-                <button id="botaodireito"></button>
-            </div>
         </div>
     </main>
     <footer>
@@ -244,5 +329,55 @@
             </div>
         </div>
     </footer>
+    <script>
+        const slide = document.querySelectorAll('.slide');
+        let Slideatual = 0;
+
+        // Mostra o primeiro slide ao carregar
+        function showslider() {
+            slide.forEach(s => s.classList.remove('on')); // esconde todos
+            slide[Slideatual].classList.add('on');        // mostra o slide atual
+        }
+
+        showslider(); // inicializa
+
+        function nextslider() {
+            Slideatual = (Slideatual + 1) % slide.length; // vai para o próximo
+            showslider();
+        }
+
+        function prevslider() {
+            Slideatual = (Slideatual - 1 + slide.length) % slide.length; // vai para o anterior
+            showslider();
+        }
+
+        document.getElementById('botaodireito').addEventListener('click', nextslider);
+        document.getElementById('botaoesquerdo').addEventListener('click', prevslider);
+
+        const slide2 = document.querySelectorAll('.slide2');
+        let Slideatual2 = 0;
+
+        // Mostra o primeiro slide ao carregar
+        function showslider2() {
+            slide2.forEach(s => s.classList.remove('on')); // esconde todos
+            slide2[Slideatual].classList.add('on');        // mostra o slide atual
+        }
+
+        showslider2(); // inicializa
+
+        function nextslider2() {
+            Slideatual = (Slideatual + 1) % slide2.length; // vai para o próximo
+            showslider2();
+        }
+
+        function prevslider2() {
+            Slideatual = (Slideatual - 1 + slide2.length) % slide2.length; // vai para o anterior
+            showslider2();
+        }
+
+        document.getElementById('botaodireito2').addEventListener('click', nextslider2);
+        document.getElementById('botaoesquerdo2').addEventListener('click', prevslider2);
+
+    </script>
 </body>
 </html>
