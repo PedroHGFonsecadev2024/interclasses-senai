@@ -5,11 +5,80 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <style>
-        footer{
-            background-color: #282828;
-        }
-        header {
+        body{
             font-family: "Orbitron", sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        footer{
+        display: grid;
+        font-weight: 400;
+        color: #fff;
+        background-color: #282828;
+        
+        }
+        #footerdiv{
+            display: flex;
+            font-family: "Orbitron", sans-serif;
+            flex-direction: column; /* Empilha o conteúdo */
+            font-weight: 400;
+            font-style: normal;
+            width: 100%;
+            padding-bottom: 1.5rem;
+            background-size: cover;
+            position: relative;
+            margin: 0;
+        }
+        .icones{
+            width: 50px;
+            height: 50px;
+        }
+        .icones:hover{
+            cursor: pointer;
+        }
+        .icones-container {
+            display: flex;
+            justify-content: center; /* Centraliza horizontalmente */
+            flex-wrap: wrap; /* Permite que quebrem linha se necessário */
+            gap: 10px; /* Espaçamento entre os ícones (opcional) */
+            width: 100%;
+            margin-top: 1rem;
+        }
+        #localiza-contato-horario{
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Centraliza horizontalmente */
+            align-items: center;
+            flex-wrap: wrap; /* Permite que quebrem linha se necessário */
+            width: 100%;
+            margin: 0;
+            margin-top: 0.5rem;
+        }
+        p {
+            margin: 0;
+        }
+        #jacinto_logo{
+            width: 210px;
+            height: 210px;
+        }
+        #jacintodiv{
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Centraliza horizontalmente */
+            align-items: center;
+            flex-wrap: wrap; /* Permite que quebrem linha se necessário */
+            width: 100%;
+            margin-top: 1rem;
+        }
+        #copyrightsigmaweb{
+            display: flex;
+            flex-direction: column;
+            justify-content: center; /* Centraliza horizontalmente */
+            align-items: center;
+            flex-wrap: wrap; /* Permite que quebrem linha se necessário */
+            width: 100%;
+            margin: 0;
+            color: white;
         }
         .imagens-header{
             display: flex;
@@ -53,7 +122,6 @@
             font-weight: 700;
         }
         p{
-            font-family: "Orbitron", sans-serif;
             color: #fff;
             margin: 0;
         }
@@ -67,23 +135,49 @@
             flex-direction: column;
             align-items: center;
         }
-        input, .cabecalho, button{
+        input, .cabecalho, .botoesforms{
             border: none;
             width: 50%;
             height: 70px;
             outline: none;
             box-sizing: border-box;
         }
-        button{
+        .botoesforms{
             display: flex;
             flex-direction: column;
             align-items: center;
+            justify-content: center;
+            font-family: "Orbitron", sans-serif;
+            font-size: 29px;
+            color: #fff;
+            background-color: #f00;
+            cursor: pointer;
+        }
+        .botoesforms:hover{
+            background-color: rgb(159, 0, 0)
         }
         form :nth-child(even){
             background-color: #d9d9d9;
         }
         form :nth-child(odd){
             background-color: #f00;
+        }
+        .carrossel{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            min-height: 100vh;
+            gap: 1rem;
+        }
+        #produtos-grid{
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 50vw;
+            background-color: firebrick;
+
         }
     </style>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -120,13 +214,35 @@
             <input type="text">
             <input type="text">
             </form>
-            <button style="margin-top: 10px;"></button>
-            <button style="margin-top: 30px;"></button>
-            <button style="margin-top: 10px;"></button>
+            <center>
+            <button style="margin-top: 10px;" class="botoesforms"> Confirmar inscrição </button>
+            <button style="margin-top: 30px;" class="botoesforms">  Regulamento </button>
+            <button style="margin-top: 10px;" class="botoesforms">  Times e participantes </button>
+            </center>
+        </div>
+        <div class="beneficiosaapm">
+            <h1>Por que aderir à AAPM</h1>
+            <div class="carrossel">
+                <button id="botaoesquerdo"></button>
+                <div id="produtosgrid"></div>
+                <button id="botaodireito"></button>
+            </div>
         </div>
     </main>
     <footer>
-
+        <div id="footerdiv">
+            <div id="jacintodiv">
+                <img src="src/AAPM_logo2.png" alt="" id="jacinto_logo">
+            </div>    
+            <div id="localiza-contato-horario">
+                <p>Praça Roberto Mange, 30 - Santa Rosália - Sorocaba/SP, 18090-110</p>
+            </div>
+            <div class="icones-container">
+                <a><img src="src/Zap.png" alt="logo_insta" class="icones"></a>
+                <a><img src="src/Instagram.png" alt="logo_zap" class="icones"></a>
+                <a><img src="src/facebook-2868 (1).png" alt="logo_face" class="icones"></a>
+            </div>
+        </div>
     </footer>
 </body>
 </html>
