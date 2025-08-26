@@ -157,13 +157,27 @@
         .botoesforms:hover{
             background-color: rgb(159, 0, 0)
         }
-        form :nth-child(even){
+        form input:nth-child(even),
+        form select:nth-child(even) 
+        {
             background-color: #d9d9d9;
+        }
+        form input:nth-child(even)::placeholder{
             color: black;
         }
-        form :nth-child(odd){
+        select:nth-child(even) option:disabled{
+            color: black;
+        }
+        form input:nth-child(odd),
+        form select:nth-child(odd)
+        {
             background-color: #f00;
-            color: #fff;
+        }
+        form input:nth-child(odd)::placeholder{
+            color: white;
+        }
+        select:nth-child(odd) option:disabled{
+            color: white;
         }
         .carrossel{
             display: flex;
@@ -294,6 +308,12 @@
             </select>
             <input type="tel" placeholder="Telefone"> 
             <input type="email" placeholder="Email pessoal"> 
+            <select name="modalidade" id="modalidade">
+                <option value="" disabled selected>Qual a sua modalidade?</option>
+                <option value="Futsal">Futsal</option>
+                <option value="Vôlei">Vôlei</option>
+                <option value="Tênis-de-mesa">Tênis-de-mesa</option>
+            </select>
             <select name="equipe" id="equipe">
                 <option value="" disabled selected>Possui equipe?</option> 
                 <option value="Equipe">Sim</option>
