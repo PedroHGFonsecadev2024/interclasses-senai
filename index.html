@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Interclasses</title>
+    <link rel="shortcut icon" type="x-icon" href="football (1).png">
     <style>
         body{
             font-family: "Orbitron", sans-serif;
@@ -35,6 +36,12 @@
         }
         .icones:hover{
             cursor: pointer;
+        }
+        p {
+            text-decoration: red;
+        }
+        a:visited{
+            text-decoration: red;
         }
         .icones-container {
             display: flex;
@@ -70,7 +77,7 @@
             width: 100%;
             margin-top: 1rem;
         }
-        #copyrightsigmaweb{
+        #copyrightsigmaweb, .github{
             display: flex;
             flex-direction: column;
             justify-content: center; /* Centraliza horizontalmente */
@@ -85,13 +92,13 @@
             justify-content: center;
             gap: 0;
         }
+        
         .moldura{
             height: 440px;
             width: auto;
             overflow:hidden;
             position: relative;
             aspect-ratio: 660/323;
-            margin-left: -30px;
 
             -webkit-mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 660 323'><path d='M0 0H454.951L660 157.655L454.951 323H0L248.621 157.655L0 0Z' fill='black'/></svg>");
             mask-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 660 323'><path d='M0 0H454.951L660 157.655L454.951 323H0L248.621 157.655L0 0Z' fill='black'/></svg>");
@@ -113,6 +120,12 @@
             background-color: #282828;
             margin: 0;
             align-items: center;
+            padding: 1rem;
+        }
+        header{
+            position: sticky;
+            top: 0;
+            z-index: 1;
         }
         body{
             background-color: #555555;
@@ -143,6 +156,9 @@
             box-sizing: border-box;
             font-family: "Orbitron", sans-serif;
         }
+        input{
+            padding-left: 1rem;
+        }
         .botoesforms{
             display: flex;
             flex-direction: column;
@@ -167,7 +183,12 @@
         {
             background-color: #f00;
         }
-
+        form input::placeholder{
+            color: black;
+        }
+        select {
+            padding-left: 1rem;
+        }
         .carrossel{
             display: flex;
             align-items: center;
@@ -238,17 +259,23 @@
 <body>
     <header>
         <div class="navbar">
-            <img src="src/Hamburger_icon.png" style="filter: invert(1); margin-left: 50px;">
-            <img src="src/AAPM_logo2.png" style="height: 99px; border-radius: 5%;" alt="">
-            <img src="src/SENAI_São_Paulo_logo.png" style="left: 0;position: absolute; width: 387px; height: 99px; margin-right: 50px; border-radius: 5%;" alt="">
-        </div>
-        <div class="imagens-header">
-            <div class="moldura"> <img src="src/falcao-futsal.png" alt="Futsal"></div>
-            <div class="moldura"> <img src="src/volei.png" alt="Volei"></div>
-            <div class="moldura"><img src="src/tênis-de-mesa.jpg" alt=""></div>
+            <img src="src/Hamburger_icon.png" style="filter: invert(1); margin-left: 50px; left: 0; height: 99px;">
+            <img src="src/AAPM_logo2.png" style="height: 99px; border-radius: 5%; position: absolute; right: 500px;" alt="">
+            <img src="src/SENAI_São_Paulo_logo.png" style="right: 0;position: absolute; width: 387px; height: 99px; margin-right: 50px; border-radius: 5%;" alt="">
         </div>
     </header>
     <main>
+        <div class="anuncio">
+            <p style="font-size: 29px; margin-top: 1rem;"> A <strong>AAPM</strong> do SENAI Gapar Ricardo Jr. apresenta</p>
+            <p style="font-size: 64px;">INTERCLASSES <strong>SENAI</strong> 2025</p>
+            <p style="font-size: 64px;">De <strong>DD/MM</strong> A <strong>DD/MM</strong></p>
+            <p style="font-size: 29px;">Venha testar suas habilidades, competir e se divertir em três modalidades: futsal, vôlei e tênis de mesa</p>
+        </div>
+            <div class="imagens-header">
+            <div class="moldura"> <img src="src/falcao-futsal.png" alt="Futsal"></div>
+            <div class="moldura"> <img src="src/volei.png" alt="Volei"></div>
+            <div class="moldura"><img src="src/tênis-de-mesa.jpg" alt=""></div>
+            </div>
             <div class="beneficiosaapm">
             <center>
                 <h1 style="color: white;">Por que aderir à AAPM?</h1>
@@ -280,12 +307,6 @@
                 </div>
                 <button id="botaodireito2">&#129122</button>
             </div>
-        </div>
-        <div class="anuncio">
-            <p style="font-size: 29px;"> A <strong>AAPM</strong> do SENAI Gapar Ricardo Jr. apresenta</p>
-            <p style="font-size: 64px;">INTERCLASSES <strong>SENAI</strong> 2025</p>
-            <p style="font-size: 64px;">De <strong>DD/MM</strong> A <strong>DD/MM</strong></p>
-            <p style="font-size: 29px;">Venha testar suas habilidades, competir e se divertir em três modalidades: futsal, vôlei e tênis de mesa</p>
         </div>
         <div class="form">
             <center> <div class="cabecalho" style="background-color: #d9d9d9; margin-top: 10px;"> <p style="color: black;">Inscreva-se e faça parte desta história!</p></div></center>
@@ -319,22 +340,25 @@
             <center>
             <button style="margin-top: 10px;" class="botoesforms"> Confirmar inscrição </button>
             <button style="margin-top: 30px;" class="botoesforms">  Regulamento </button>
-            <button style="margin-top: 10px;" class="botoesforms">  Times e participantes </button>
+            <button style="margin-top: 10px; margin-bottom: 30px;" class="botoesforms">  Times e participantes </button>
             </center>
         </div>
     </main>
     <footer>
         <div id="footerdiv">
             <div id="jacintodiv">
-                <img src="src/AAPM_logo2.png" alt="" id="jacinto_logo">
+               <a href="https://aapmsenaisorocaba.com.br/"> <img src="src/AAPM_logo2.png" alt="" id="jacinto_logo"> </a> 
             </div>    
             <div id="localiza-contato-horario">
-                <p>Praça Roberto Mange, 30 - Santa Rosália - Sorocaba/SP, 18090-110</p>
+                <a href="https://www.google.com/maps/place/School+Senai+-+Sorocaba/@-23.4867075,-47.4518035,17z/data=!3m1!4b1!4m6!3m5!1s0x94c58a9f61b55945:0x4ead928c70b1e690!8m2!3d-23.4867124!4d-47.4492286!16s%2Fg%2F1tcxf9gy?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D"> <p>Praça Roberto Mange, 30 - Santa Rosália - Sorocaba/SP, 18090-110</p> </a>
             </div>
             <div class="icones-container">
-                <a><img src="src/Zap.png" alt="logo_insta" class="icones"></a>
-                <a><img src="src/Instagram.png" alt="logo_zap" class="icones"></a>
-                <a><img src="src/facebook-2868 (1).png" alt="logo_face" class="icones"></a>
+                <a href="https://api.whatsapp.com/send/?phone=551532127410&text=Ol%C3%A1%2C+gostaria+de+saber+mais+sobre+o+interclasses%21&type=phone_number&app_absent=0"><img src="src/Zap.png" alt="logo_insta" class="icones"></a>
+                <a href="https://www.instagram.com/accounts/login/?next=%2Faapmsenaisorocaba%2F&source=omni_redirect"><img src="src/Instagram.png" alt="logo_zap" class="icones"></a>
+                <a href="https://www.facebook.com/aapmsenaisorocaba/"><img src="src/facebook-2868 (1).png" alt="logo_face" class="icones"></a>
+            </div>
+            <div class="github">
+                <a href="https://github.com/PedroHGFonsecadev2024/" style="text-decoration: red;"><p style="font-size: 1rem; text-decoration: red;">Github: PedroHGFonsecadev2024</p></a>
             </div>
         </div>
     </footer>
